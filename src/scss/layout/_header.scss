@@ -1,0 +1,23 @@
+@use "../abstract" as *;
+
+.header{
+    background-color:$clr-primary;
+    padding:8rem 1rem;
+    text-align: center;
+
+    &__title{
+        color:$clr-neutral;
+        text-transform: capitalize;
+
+        &::after{
+            content:" ";
+            width:32rem;
+            height:0.5rem;
+            background-color: $clr-secondary;
+            display: block;
+            margin-inline: auto;
+            margin-top:1rem;
+        }
+    }
+
+}

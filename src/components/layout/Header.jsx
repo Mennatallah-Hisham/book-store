@@ -4,15 +4,15 @@ import React from 'react'
 
 const Header = ({title , body}) => {
   return (
-    <section>
-            <h1>{title}</h1>
+    <header className='header'>
+            <h1 className="header__title">{title}</h1>
             {body &&
               <p>
              {body}
           </p>
             }
           
-        </section>
+        </header>
   )
 }
 

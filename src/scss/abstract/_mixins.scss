@@ -1,0 +1,24 @@
+
+
+@mixin flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-col{
+    @include flex;
+    flex-direction: column;
+
+}
+
+@mixin flex-row{
+    @include flex;
+    flex-wrap: wrap;
+}
+
+@mixin screen-md{
+    @media (min-width:""){
+        @content
+    }
+}

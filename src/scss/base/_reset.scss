@@ -1,0 +1,30 @@
+@use "../abstract/variables" as *;
+html{
+    font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+a{
+  
+    &:link,
+    &:visited{
+        text-decoration: none;
+        font-size:1.9rem;
+        color:$clr-primary;
+    }
+}
+
+// button{
+//     border:none;
+//     cursor: pointer;
+//     outline: none;
+//     font-size:1.9rem;
+//     font-weight: 700;
+// }

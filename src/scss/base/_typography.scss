@@ -1,0 +1,28 @@
+@use "../abstract" as *;
+h1{
+    font-size: 6.5rem;
+}
+
+h2{
+    font-size:5.5rem ;
+}
+
+h3{
+    font-size: 4.5rem;
+}
+
+p{
+    font-size: 1.9rem;
+}
+
+.txt--sec{
+    font-weight: 800;
+    color:$clr-primary;
+    font-size: 2.4rem;
+}
+.txt--pri{
+    color:$clr-txt;
+    font-size: 1.9rem;
+    width:36rem;
+    line-height: 1.4;
+}
