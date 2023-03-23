@@ -29,3 +29,11 @@
 .clr-txt{
     color:$clr-txt;
 }
+.flex-2{
+    @include flex-row;
+    gap:5rem;
+}
+.flex-1{
+    @include flex-row;
+    gap:2rem;
+}

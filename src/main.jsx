@@ -7,6 +7,7 @@ import Error from './pages/Error';
 import Home from './pages/Home';
 import Contact from "./pages/Contact";
 import Search from "./pages/Search";
+import Shop from"./pages/Shop";
 
 const routes = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ children:[
 },{
   path:'/search',
   element:<Search/>
+}
+,{
+  path:'/shop',
+  element:<Shop/>
 }
 
 ]

@@ -10,7 +10,7 @@ const Home = () => {
 
 </section>
 <Banner/>
-<Books/>
+
 
 </React.Fragment>
   )

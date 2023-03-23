@@ -2,7 +2,7 @@ import React from 'react'
 import BookCard from './BookCard';
 const Books = () => {
   return (
-    <section className="flex-2 m-5">
+    <section className="container flex-2 m-5">
 
       <BookCard/>
       <BookCard/>
