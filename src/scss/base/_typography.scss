@@ -34,3 +34,19 @@ p{
         font-size: 2rem;
     }
 }
+
+.subheading{
+    font-size:4rem;
+    color:$clr-primary;
+    text-transform: capitalize;
+    text-align: center;
+    &::after{
+        content:" ";
+        width:10rem;
+        height:0.4rem;
+        background-color: $clr-secondary;
+        display: block;
+        margin-inline: auto;
+        margin-top:1rem;
+    }
+}

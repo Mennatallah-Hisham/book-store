@@ -1,4 +1,4 @@
-@use "../abstract/variables" as *;
+@use "../abstract" as *;
 .btn{
     border:none;
     cursor: pointer;
@@ -8,20 +8,53 @@
     text-transform: capitalize;
     display: inline-block;
     padding:1.5rem 8rem ;
+    &--sm{
+        font-size:1.6rem;
+        font-weight: 500;
+        padding:0.5rem 2rem ;  
+        width: 100%;
+        @include screen-md{
+         width:auto;
+        }
+    }
 
     &--filled{
+        border:2px solid $clr-secondary;
         background-color: $clr-secondary;
-        &:link,
-        &:visited{
+       
             color:$clr-primary;
-        }
+
+            &:hover{
+                border:2px solid $clr-secondary;
+                background-color: #fff;
+            }
+
+
+        
       
   
 
+    }
+    &--outline{
+        border:2px solid $clr-primary;
+        color:$clr-primary;
+        background-color: #fff;
+
+        &:hover{
+            background-color: $clr-primary;
+            color:$clr-neutral;
+        }
     }
     &--sec{
         background-color: $clr-primary;
         color:$clr-neutral;
     }
+
+}
+.btns{
+    @include flex-row;
+    gap:0.5rem;
+    
+
 
 }

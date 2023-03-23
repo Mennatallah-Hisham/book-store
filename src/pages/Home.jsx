@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from '../components/Banner';
 import Header from '../components/layout/Header';
-
+import Books from '../components/book/Books';
 const Home = () => {
   return (
     <React.Fragment>
@@ -10,6 +10,7 @@ const Home = () => {
 
 </section>
 <Banner/>
+<Books/>
 
 </React.Fragment>
   )
