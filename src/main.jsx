@@ -6,6 +6,7 @@ import App from './App';
 import Error from './pages/Error';
 import Home from './pages/Home';
 import Contact from "./pages/Contact";
+import Search from "./pages/Search";
 
 const routes = createBrowserRouter([
   {
@@ -18,7 +19,12 @@ children:[
 },{
   path:'/contact',
   element:<Contact/>
-}]
+},{
+  path:'/search',
+  element:<Search/>
+}
+
+]
 }]);
 
 

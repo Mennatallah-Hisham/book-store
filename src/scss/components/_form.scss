@@ -1,0 +1,23 @@
+@use "../abstract" as *;
+
+.form-flex{
+
+    background-color: red;
+    border:1px solid green;
+    @include flex-col;
+    width:90%;
+    margin-inline: auto;
+
+
+    @include screen-md{
+        flex-direction: row;
+        max-width: 70rem;
+      
+    }
+
+    &__input{
+        width:100%;
+        padding:1.5rem 1rem;
+    }
+
+}

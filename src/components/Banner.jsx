@@ -8,11 +8,12 @@ const Banner = () => {
     <p className='cta__txt txt--sec txt-s'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem consequuntur aliquam sit culpa magni fugit voluptates esse rerum odio itaque placeat</p>
    
 
-    <form className='cta__form'>
-      <input type="email" placeholder="email"/>
-      <button className='btn btn--sec'>subscribe</button>
+
+    <form className="form-flex">
+    <input className="form-flex__input" type="email" placeholder="email" required/>
+        <button className='btn btn--sec'>subscribe</button>
     </form>
-    
+
 
     
     </section>

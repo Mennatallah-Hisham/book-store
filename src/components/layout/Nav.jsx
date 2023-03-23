@@ -19,6 +19,13 @@ const Nav = () => {
 
         </li>
     </ul>
+    <ul>
+        <li>
+            <Link to="/search">search</Link>
+            
+        </li>
+      
+    </ul>
 </nav>
   );
 }

@@ -5,14 +5,12 @@
     padding:5rem 6rem;
     max-width: 120rem;
     margin-inline: auto;
+    border-radius: 1rem;
     
     @include flex-center;
     flex-direction: column;
     gap:2rem;
 
    
-    &__form{
-        @include flex-row;
-      
-    }
+ 
 }
