@@ -1,0 +1,18 @@
+@use "../abstract" as  *;
+
+.cta{
+    background-color:$clr-secondary;
+    padding:5rem 6rem;
+    max-width: 120rem;
+    margin-inline: auto;
+    
+    @include flex-center;
+    flex-direction: column;
+    gap:2rem;
+
+   
+    &__form{
+        @include flex-row;
+      
+    }
+}

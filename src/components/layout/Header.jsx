@@ -7,7 +7,7 @@ const Header = ({title , body}) => {
     <header className='header'>
             <h1 className="header__title">{title}</h1>
             {body &&
-              <p>
+              <p className='header__body'>
              {body}
           </p>
             }

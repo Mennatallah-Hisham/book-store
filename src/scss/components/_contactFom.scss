@@ -1,0 +1,27 @@
+@use "../abstract" as *;
+.form{
+@include flex-col;
+
+gap:1.5rem;
+    &__gp{
+        // &:not(:last-child){
+        //     border:1px solid red;
+        // }
+     
+        @include flex-col;
+        gap:0.2rem;
+      align-items: flex-start;
+    }
+
+    &__label{
+        color:$clr-primary;
+        text-transform: capitalize;
+        font-size: 1.6rem;
+
+    }
+    &__input{
+        width:100%;
+        padding:0.5rem 1rem;
+    }
+}
+

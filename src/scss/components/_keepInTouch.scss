@@ -1,0 +1,10 @@
+@use "../abstract/mixins" as *;
+.keep{
+   align-items: center;
+   text-align: center;
+@include screen-l{
+    text-align: left;
+    align-items: flex-start;
+}
+
+}

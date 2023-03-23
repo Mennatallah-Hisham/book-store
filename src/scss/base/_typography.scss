@@ -26,3 +26,11 @@ p{
     width:36rem;
     line-height: 1.4;
 }
+.txt{
+    &--sm{
+        font-size:1.6rem;
+    }
+    &--m{
+        font-size: 2rem;
+    }
+}

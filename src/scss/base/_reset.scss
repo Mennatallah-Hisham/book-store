@@ -16,15 +16,11 @@ a{
     &:link,
     &:visited{
         text-decoration: none;
-        font-size:1.9rem;
+        font-size:1.8rem;
         color:$clr-primary;
     }
 }
 
-// button{
-//     border:none;
-//     cursor: pointer;
-//     outline: none;
-//     font-size:1.9rem;
-//     font-weight: 700;
-// }
+ul{
+    list-style: none;
+}

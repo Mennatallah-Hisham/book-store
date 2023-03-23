@@ -1,0 +1,21 @@
+@use "../abstract" as *;
+
+.flex{
+    @include flex-row;
+    gap:15rem;
+}
+
+.flex-col--xs{
+    @include flex-col;
+    gap:1.5rem;
+}
+.flex-col--s{
+
+    @include flex-col;
+    align-items: flex-start;
+    gap:3rem;
+}
+
+.m-5{
+    margin:5rem auto;
+}

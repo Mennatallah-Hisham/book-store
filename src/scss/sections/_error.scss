@@ -2,7 +2,8 @@
 .error{
 text-align: center;
 padding:4rem 2rem;
-@include flex-col;
+@include flex-center;
+flex-direction: column;
 gap:3rem;
 
 &__num{

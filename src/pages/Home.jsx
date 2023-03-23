@@ -1,4 +1,5 @@
 import React from 'react';
+import Banner from '../components/Banner';
 import Header from '../components/layout/Header';
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
     <section>
 
 </section>
+<Banner/>
 
 </React.Fragment>
   )
