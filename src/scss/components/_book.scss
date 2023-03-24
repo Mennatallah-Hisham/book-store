@@ -1,0 +1,52 @@
+@use "../abstract" as *;
+.book{
+    max-width:40rem;
+    margin-inline: auto;
+    @include screen-md{
+        max-width:100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      text-align: left;
+      
+    }
+    &__img{
+        max-width: 100%;
+        @include screen-md{
+            max-width: 80rem;
+            align-self: center;
+            justify-self: center;
+        }
+    }
+
+    &__content{
+        padding:1rem;
+        @include flex-col;
+        gap:1rem;
+        font-size: 1.9rem;
+
+        & span{
+            text-transform: capitalize;
+            color:$clr-primary;
+            font-weight: 600;
+        }
+        & p:not(:first-child){
+            color:$clr-txt;
+        }
+        
+    }
+    &__nums{
+        display: flex;
+        justify-content: space-between;
+        padding-right:3rem;
+
+        @include screen-md{
+            justify-content: start;
+            gap:8rem;
+            padding-right:0;
+        }
+
+
+    }
+
+    
+}

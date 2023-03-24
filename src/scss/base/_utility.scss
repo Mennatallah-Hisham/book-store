@@ -19,15 +19,17 @@
 .m-5{
     margin:5rem auto;
 }
-
+.m-8{
+    margin:10rem auto;
+}
 .clr-sec{
-    color:$clr-secondary;
+    color:$clr-secondary !important;
 }
 .clr-pri{
-    color:$clr-primary;
+    color:$clr-primary !important;
 }
 .clr-txt{
-    color:$clr-txt;
+    color:$clr-txt !important;
 }
 .flex-2{
     @include flex-row;

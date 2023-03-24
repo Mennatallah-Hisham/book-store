@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <nav>
-    <ul>
+    <nav className='flex-2'>
+    <ul className='flex-2'>
         <li>
             <Link to="/">Home</Link>
             
@@ -19,9 +19,21 @@ const Nav = () => {
 
         </li>
     </ul>
-    <ul>
+    <ul className='flex-2'>
         <li>
             <Link to="/search">search</Link>
+            
+        </li>
+        <li>
+            <Link to="/book">view book</Link>
+            
+        </li>
+        <li>
+            <Link to="/wishlist">wishlist</Link>
+            
+        </li>
+        <li>
+            <Link to="/cart">cart</Link>
             
         </li>
       
