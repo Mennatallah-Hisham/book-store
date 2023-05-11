@@ -23,6 +23,9 @@ const CartDetails = () => {
     <Link to="/check-out" className="btn btn--filled m-5">
         Checkout
     </Link>
+    <button className="btn btn--outline">
+      Empty Cart
+    </button>
 
     </section>
   )

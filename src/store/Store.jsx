@@ -6,9 +6,9 @@ import wishlistSlice from "./WishlistSlice";
 
 const store = configureStore({
     reducer:{
-        auth:authSlice,
-        cart:cartSlice,
-       wishlist: wishlistSlice
+        auth:authSlice.reducer,
+        cart:cartSlice.reducer,
+       wishlist: wishlistSlice.reducer
     }
 })
 

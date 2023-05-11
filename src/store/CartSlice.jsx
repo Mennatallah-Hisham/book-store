@@ -13,11 +13,7 @@ const cartSlice = createSlice({
     name:"cart",
     initialState,
     reducers:{
-        reset(state){
-            state.items=[];
-            state.totalNum=0;
-            state.totalPrice=0;
-        },
+   
         addItem(state,action){
             // quantity ==1
             const item = action.payload;
@@ -60,6 +56,13 @@ const cartSlice = createSlice({
             storeInLocaleStorage("cart",state.items);
           
         },
+        deleteItem(state,action){
+            const itemId=action.payload;
+            state.items.filter(i=>i.id!== item.id);
+            storeInLocaleStorage("cart",state.items);
+
+        },
+
         isAdded(state,action){
            
             const itemId = action.payload;
@@ -69,9 +72,16 @@ const cartSlice = createSlice({
         }
         ,
         setCart(state){
-            state.items = getKeyValueFromLocalStorage("cart",[]);
+            state.items = getKeyValueFromLocalStorage("cart","{}");
 
-        }
+            
+        },
+        resetCart(state){
+            state.items=[];
+            storeInLocaleStorage("cart",state.items);
+
+         
+        },
         // setCart
         // onload if cart is in localstorage
         // set state.items of cart == localstorage cart arr

@@ -10,6 +10,7 @@ const CartActions = () => {
 </div>
 
         <button className='btn btn--sm btn--filled '> remove</button>
+        <button className='btn btn--sm btn--outline '> move to wishlist</button>
     </div>
   )
 }

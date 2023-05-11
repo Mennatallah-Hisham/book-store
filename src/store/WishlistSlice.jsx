@@ -1,5 +1,5 @@
 import {createSlice}from "@reduxjs/toolkit";
-import { storeInLocaleStorage , ItemExistsInLocaleStorage ,} from "../utility/localStorage";
+import { storeInLocaleStorage , ItemExistsInLocaleStorage ,getKeyValueFromLocalStorage} from "../utility/localStorage";
 
 const initialState={
     items:[],
@@ -36,7 +36,7 @@ const wishlistSlice = createSlice({
         }
         ,
         setWishlist(state){
-            state.items = getKeyValueFromLocalStorage("wishlist",[]);
+            state.items = getKeyValueFromLocalStorage("wishlist","[]");
 
         }
         // setWishlist

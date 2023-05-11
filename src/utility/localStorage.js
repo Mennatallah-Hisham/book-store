@@ -2,7 +2,7 @@
 // store key, value to localstorage
 export function storeInLocaleStorage(key,value){
 
-    localStorage.setItem(key,value);
+    localStorage.setItem(key,JSON.stringify(value));
 
 
 };
@@ -15,7 +15,7 @@ export function getKeyValueFromLocalStorage(key ,initialVal){
     
         localStorage.setItem(key,initialVal);
     }
-        return localStorage.getItem(key);
+        return JSON.parse( localStorage.getItem(key));
     
    
 
@@ -27,7 +27,7 @@ export function getKeyValueFromLocalStorage(key ,initialVal){
 //return book from arr
 export function getItemFromLocalStorage(key,Id){
     if(localStorage.getItem(key)){
-        const arr = localStorage.getItem(key);
+        const arr =JSON.parse( localStorage.getItem(key));
         const existingItem = arr.find(i=>i.id===Id);
        return existingItem;
     }

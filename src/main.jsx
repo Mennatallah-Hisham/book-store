@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {RouterProvider,createBrowserRouter} from "react-router-dom";
 import { Provider } from 'react-redux';
-import './scss/main.scss';
 import store from './store/Store';
+import './scss/main.scss';
 import App from './App';
 import Error from './pages/Error';
 import Home from './pages/Home';
@@ -13,6 +13,7 @@ import Shop from"./pages/Shop";
 import ViewBook from"./pages/ViewBook";
 import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/Cart";
+import Auth from './pages/Auth';
 
 
 const routes = createBrowserRouter([
@@ -45,6 +46,9 @@ children:[
 ,{
   path:'/cart',
   element:<Cart/>
+},{
+  path:'/auth',
+  element:<Auth/>
 }
 
 ]
@@ -52,15 +56,15 @@ children:[
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+<Provider store={store}>
   <RouterProvider router={routes}>
 
 <React.StrictMode>
-<Provider store={store}>
 <App />
-</Provider>
   
     </React.StrictMode>
 
 
   </RouterProvider>
+</Provider>
 );

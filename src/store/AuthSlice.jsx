@@ -18,7 +18,7 @@ const authSlice =createSlice({
         signUp(state,action){
 
             state.isLoggedIn=true;
-            state.user=action.user;
+            state.user=action.payload;
 
             storeInLocaleStorage("logedIn",true);
             storeInLocaleStorage("user",state.user);
@@ -39,11 +39,12 @@ const authSlice =createSlice({
             storeInLocaleStorage("logedIn",false);
 
         },
-        setLogin(state){
-           state.isLoggedIn= getKeyValueFromLocalStorage("logedIn",false);
+        setAuth(state){
+            state.isLoggedIn= getKeyValueFromLocalStorage("logedIn",false);
            state.user=getKeyValueFromLocalStorage("user",{});
-
+           console.log(state.user);
         }
+        
     }
 
 });

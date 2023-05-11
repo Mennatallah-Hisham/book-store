@@ -1,8 +1,18 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { useDispatch,useSelector } from 'react-redux';
+import { authActions } from '../../store/AuthSlice';
+
+
 
 
 const Nav = () => {
+    const isLoggedIn = useSelector(state=>state.auth.isLoggedIn);
+    const dispatch = useDispatch();
+    const logoutHandler=()=>{
+        dispatch(authActions.logout());
+
+    }
   return (
     <nav className='flex-2'>
     <ul className='flex-2'>
@@ -36,6 +46,23 @@ const Nav = () => {
             <Link to="/cart">cart</Link>
             
         </li>
+        {isLoggedIn
+        ?
+        <li>
+            <button className='btn btn--filled btn--sm '
+            onClick={logoutHandler}>
+                logout
+            </button>
+        </li>
+        :
+        <li>
+        <Link to="/auth" className='btn btn--filled btn--sm'>signUP</Link>
+        
+    </li>
+
+    }
+        
+       
       
     </ul>
 </nav>
