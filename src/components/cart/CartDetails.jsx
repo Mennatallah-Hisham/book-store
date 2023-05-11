@@ -20,7 +20,8 @@ const CartDetails = () => {
 
 
 
-    <Link to="/check-out" className="btn btn--filled m-5">
+// after check out reset cart
+    <Link to="/checkout" className="btn btn--filled m-5">
         Checkout
     </Link>
     <button className="btn btn--outline">

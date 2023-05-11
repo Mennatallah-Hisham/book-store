@@ -14,6 +14,7 @@ import ViewBook from"./pages/ViewBook";
 import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/Cart";
 import Auth from './pages/Auth';
+import CheckOut from './pages/CheckOut';
 
 
 const routes = createBrowserRouter([
@@ -49,6 +50,10 @@ children:[
 },{
   path:'/auth',
   element:<Auth/>
+}
+,{
+  path:'/checkout',
+  element:<CheckOut/>
 }
 
 ]
