@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { storeInLocaleStorage } from "../utility/localStorage";
+import { getKeyValueFromLocalStorage, storeInLocaleStorage } from "../utility/localStorage";
 
 const initialState={
     user:{
@@ -27,6 +27,7 @@ const authSlice =createSlice({
         },
         login(state,action){
          
+         
                     state.isLoggedIn=true;
                     storeInLocaleStorage("logedIn",true);
                
@@ -36,6 +37,11 @@ const authSlice =createSlice({
         logout(state){
             state.isLoggedIn=false;
             storeInLocaleStorage("logedIn",false);
+
+        },
+        setLogin(state){
+           state.isLoggedIn= getKeyValueFromLocalStorage("logedIn",false);
+           state.user=getKeyValueFromLocalStorage("user",{});
 
         }
     }

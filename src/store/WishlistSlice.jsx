@@ -1,9 +1,9 @@
 import {createSlice}from "@reduxjs/toolkit";
-import { storeInLocaleStorage } from "../utility/localStorage";
+import { storeInLocaleStorage , ItemExistsInLocaleStorage ,} from "../utility/localStorage";
 
 const initialState={
     items:[],
-    totalNum:0,
+  
   
 }
 const wishlistSlice = createSlice({
@@ -30,14 +30,19 @@ const wishlistSlice = createSlice({
         isAdded(state,action){
             const itemId = action.payload;
          
-            return existsInLocaleStorage("wishlist",action.payload);
+            return ItemExistsInLocaleStorage("wishlist",action.payload);
         
             
         }
         ,
+        setWishlist(state){
+            state.items = getKeyValueFromLocalStorage("wishlist",[]);
+
+        }
         // setWishlist
         // onload if wishlist is in localstorage
         // set state.items of whishlist == localstorage wishlist arr
+        // getKeyValueFromLocalStorage("wishlist",[]);
 
     }
 });

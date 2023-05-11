@@ -1,10 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { existsInLocaleStorage ,storeInLocaleStorage } from "../utility/localStorage";
+import { ItemExistsInLocaleStorage ,storeInLocaleStorage ,getItemFromLocalStorage, getKeyValueFromLocalStorage} from "../utility/localStorage";
 
 const initialState ={
     items:[],
-    totalNum:0,
-    totalPrice:0,
+
   
   
 }
@@ -22,7 +21,7 @@ const cartSlice = createSlice({
         addItem(state,action){
             // quantity ==1
             const item = action.payload;
-            const existingItem = existsInLocaleStorage("cart",item.id);
+            const existingItem = getItemFromLocalStorage("cart",item.id);
             if(!existingItem){
                 state.items.push({
                     id:item.id,
@@ -48,7 +47,7 @@ const cartSlice = createSlice({
         },
         removeItem(state,action){
             const item =action.payload;
-            const existingItem=existsInLocaleStorage("cart",item.id);
+            const existingItem=getItemFromLocalStorage("cart",item.id);
             if( existingItem.quantitiy===1){
                 state.items.filter(i=>i.id!== item.id);
 
@@ -64,14 +63,19 @@ const cartSlice = createSlice({
         isAdded(state,action){
            
             const itemId = action.payload;
-          return existsInLocaleStorage("cart",action.payload);
+          return ItemExistsInLocaleStorage("cart",itemId);
 
 
         }
         ,
+        setCart(state){
+            state.items = getKeyValueFromLocalStorage("cart",[]);
+
+        }
         // setCart
         // onload if cart is in localstorage
         // set state.items of cart == localstorage cart arr
+        // getKeyValueFromLocalStorage("cart",[]);
     }
 });
 
