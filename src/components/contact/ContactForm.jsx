@@ -6,7 +6,7 @@ const ContactForm = () => {
         <div className="form__gp">
             <label
              className='form__label'
-              for="name">
+              htmlFor="name">
                 name
             </label>
             <input
@@ -22,7 +22,7 @@ const ContactForm = () => {
         <div className="form__gp">
             <label
              className='form__label'
-              for="email">
+             htmlFor="email">
                 email
             </label>
             <input
@@ -36,7 +36,7 @@ const ContactForm = () => {
         <div className="form__gp">
             <label
              className='form__label'
-              for="tel">
+             htmlFor="tel">
                 phone
             </label>
             <input
@@ -56,7 +56,7 @@ const ContactForm = () => {
     
     type="checkbox"
     id="msg" required />
-    <label for="msg">
+    <label htmlFor="msg">
         keep me up to date with news and offers from time to time
     </label>
 </div>

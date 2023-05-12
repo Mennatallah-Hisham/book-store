@@ -15,12 +15,18 @@
     align-items: flex-start;
     gap:3rem;
 }
-
+.m-1{
+    margin:1rem auto;
+}
 .m-5{
     margin:5rem auto;
 }
+
 .m-8{
     margin:10rem auto;
+}
+.mt-1{
+    margin-top:1rem;
 }
 .clr-sec{
     color:$clr-secondary !important;
