@@ -21,3 +21,12 @@
     }
 
 }
+
+.form__cont{
+
+ margin:4rem;
+ max-width: 50rem;
+ @include screen-md{
+    margin:4rem auto;
+ }
+}

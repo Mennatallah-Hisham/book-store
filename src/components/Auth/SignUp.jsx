@@ -27,7 +27,7 @@ const SignUp = () => {
   return (
 <React.Fragment>
 <Header title="signup"/>
-<form className='form ' onSubmit={formSubmitHandler}>
+<form className='form form__cont ' onSubmit={formSubmitHandler}>
     <div className="form__gp">
         <label
          className='form__label'

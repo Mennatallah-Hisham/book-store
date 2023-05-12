@@ -3,9 +3,8 @@ import SubTitle  from "./utility/SubTitle";
 
 const Banner = () => {
   return (
-   <section className='cta'>
-  
-    {/* <h3 className='cta__title '>read a free chapter</h3> */}
+   <section className='container'>
+    <div className="cta">
     <SubTitle title="read a free chapter"/>
     <p className='cta__txt txt--pri txt--sm'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem consequuntur aliquam sit culpa magni fugit voluptates esse rerum odio itaque placeat</p>
    
@@ -16,7 +15,9 @@ const Banner = () => {
         <button className='btn btn--sec'>subscribe</button>
     </form>
 
-
+    </div>
+  
+   
     
     </section>
   )

@@ -45,7 +45,7 @@ const Login = () => {
   return (
     <React.Fragment>
       <Header title="login"/>
-     <form className='form ' onSubmit={formSubmitHandler}>
+     <form className='form form__cont ' onSubmit={formSubmitHandler}>
  
 
 

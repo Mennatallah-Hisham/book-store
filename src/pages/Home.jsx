@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <React.Fragment>
-    <Header title="home"/>
+    <Header title="find your next book"/>
     <Categories/>
 <Books/>
     <section>

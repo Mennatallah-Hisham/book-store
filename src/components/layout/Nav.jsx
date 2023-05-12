@@ -1,71 +1,63 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import { useDispatch,useSelector } from 'react-redux';
-import { authActions } from '../../store/AuthSlice';
+import { useState } from 'react';
+
+
+import Cross from '../icons/Cross';
+import Bars from '../icons/Bars';
+import NavList from './NavList';
 
 
 
 
 const Nav = () => {
-    const isLoggedIn = useSelector(state=>state.auth.isLoggedIn);
-    const dispatch = useDispatch();
-    const logoutHandler=()=>{
-        dispatch(authActions.logout());
+    const [openNav, setOpenNav]=useState(false);
 
+
+    function toggleNav (){
+    
+        setOpenNav((prevstat)=>!prevstat);
+        const html = document.querySelector("html");
+        html.classList.toggle("overflow-none");
+    }
+    let navStyle ="";
+    if(openNav){
+        navStyle="nav-open";
+   
     }
   return (
-    <nav className='flex-2'>
-    <ul className='flex-2'>
-        <li>
-            <Link to="/">Home</Link>
-            
-        </li>
-        <li>
-            <Link to="/shop">shop</Link>
+<React.Fragment>
 
-        </li>
-        <li>
-            <Link to="/contact">contact us</Link>
+<div className="nav-cont margin-b-m ">
+       <p className="nav-logo"> home cinema</p>
+       <button className="nav-btn" onClick={toggleNav}>
+           {openNav?  <Cross></Cross> :<Bars/>}
 
-        </li>
-    </ul>
-    <ul className='flex-2'>
-        <li>
-            <Link to="/search">search</Link>
+     
             
-        </li>
-        <li>
-            <Link to="/book">view book</Link>
-            
-        </li>
-        <li>
-            <Link to="/wishlist">wishlist</Link>
-            
-        </li>
-        <li>
-            <Link to="/cart">cart</Link>
-            
-        </li>
-        {isLoggedIn
-        ?
-        <li>
-            <button className='btn btn--filled btn--sm '
-            onClick={logoutHandler}>
-                logout
-            </button>
-        </li>
-        :
-        <li>
-        <Link to="/auth" className='btn btn--filled btn--sm'>signUP</Link>
-        
-    </li>
-
-    }
-        
+        </button>
+        {openNav?
+        <nav className={`nav ${navStyle}`}>
+     
        
+     <NavList ismobile="true" onToggle={toggleNav}/>
+ </nav>
+  :false
+
+        }
+
+<nav className="nav">
+     
+       
+    <NavList ismobile="false" />
+ </nav>
+
+
+
       
-    </ul>
-</nav>
+        
+        </div>
+</React.Fragment>
+  
   );
 }
 

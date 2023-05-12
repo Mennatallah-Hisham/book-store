@@ -11,6 +11,10 @@
     flex-direction: column;
 
 }
+@mixin flex-col-center{
+    @include flex-center;
+    flex-direction: column;
+}
 
 @mixin flex-row{
   display:  flex;
@@ -30,3 +34,6 @@
     }
 }
 
+@mixin transition {
+    transition: all 0.4s;
+}

@@ -41,28 +41,28 @@ const allCategories = [
     name:"Design Patterns"
 
   },
-  {
-    id:9,
-    name:"UI"
+  // {
+  //   id:9,
+  //   name:"UI"
 
-  },
-  {
-    id:10,
-    name:"UX"
+  // },
+  // {
+  //   id:10,
+  //   name:"UX"
 
-  },
-  {
-    id:11,
-    name:"mobile development"
+  // },
+  // {
+  //   id:11,
+  //   name:"mobile development"
 
-  },
+  // },
 ];
 
 const Categories = () => {
   return (
     <section className="container flex-1 m-5">
       {allCategories.map((cat) => (
-        <button className=" btn btn--sm btn--sec" key={cat.id}>
+        <button className=" btn btn--cat btn--sec" key={cat.id}>
           {cat.name}
         </button>
       ))}

@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from '../components/layout/Header';
 
 const CheckOut = () => {
     const formSubmitHandler =(e)=>{
@@ -7,51 +8,65 @@ const CheckOut = () => {
   return (
 
   <React.Fragment>
-    <form>
+     <Header title ="total price : 50$"/>
+    <form className=" form form__cont" onSubmit={formSubmitHandler}>
        <div className='form__gp'>
 
-       <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="John More Doe"/>
-
-       </div>
-       <div className='form__gp'>
-       <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"/>
+       <label for="cname"
+        className='form__label'>Name on Card</label>
+            <input
+              className='form__input' type="text" id="cname" name="cardname" placeholder="John More Doe"/>
 
        </div>
        <div className='form__gp'>
-       <label for="expmonth">Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="September"/>
+       <label for="ccnum"
+        className='form__label'>Credit card number</label>
+            <input
+              className='form__input' type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"/>
 
        </div>
        <div className='form__gp'>
-       <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="expyear" placeholder="2018"/>
+       <label for="expmonth"
+        className='form__label'>Exp Month</label>
+            <input 
+              className='form__input'
+              type="text" id="expmonth" name="expmonth" placeholder="September"/>
 
        </div>
        <div className='form__gp'>
-       <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="352"/>
+       <label for="expyear"
+        className='form__label'>Exp Year</label>
+                <input 
+                  className='form__input'
+                  type="text" id="expyear" name="expyear" placeholder="2018"/>
 
        </div>
        <div className='form__gp'>
-       <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street"/>
+       <label for="cvv"
+        className='form__label'>CVV</label>
+                <input 
+                  className='form__input'
+                  type="text" id="cvv" name="cvv" placeholder="352"/>
+
+       </div>
+       <div className='form__gp'>
+       <label for="adr"
+        className='form__label'><i class="fa fa-address-card-o"></i> Address</label>
+            <input
+              className='form__input' type="text" id="adr" name="address" placeholder="542 W. 15th Street"/>
             
 
        </div>
-       <div className='form__gp'>
-       <label for="city"><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="New York"/>
+    
 
-       </div>
-
-   
+       <button className='btn btn--filled'>
+ confirm
+ </button>
            
            
           
     </form>
-    <p>delievery takes 3days</p>
+ 
 
 
     </React.Fragment>
