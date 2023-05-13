@@ -2,10 +2,12 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { authActions } from '../../store/AuthSlice';
 import {useNavigate } from 'react-router-dom';
+import {useForm} from "react-hook-form";
 import Header from '../layout/Header';
 
 
 const SignUp = () => {
+    const {register, handleSubmit ,formState:{errors}}=useForm();
     const navigate = useNavigate();
 
     const dispatch = useDispatch();
@@ -24,10 +26,14 @@ const SignUp = () => {
         signUpHandler();
         navigate("/");
     }
+
+    const submitHandler =(data)=>{
+        console.log(data);
+    }
   return (
 <React.Fragment>
 <Header title="signup"/>
-<form className='form form__cont ' onSubmit={formSubmitHandler}>
+<form className='form form__cont ' onSubmit={handleSubmit(submitHandler)}>
     <div className="form__gp">
         <label
          className='form__label'
@@ -36,10 +42,16 @@ const SignUp = () => {
         </label>
         <input
          type="txt" 
-         name="name" 
+       
          id="name" 
          className='form__input'
-         required/>
+         {...register("username",{
+            required:"username is required"
+         })}/>
+         {errors.username?.type==="required" &&
+         <p className="form__error">
+            {errors.username.message}
+            </p>}
     </div>
 
 
@@ -52,10 +64,19 @@ const SignUp = () => {
         </label>
         <input
          type="email" 
-         name="email" 
+       
          id="email" 
          className='form__input'
-         required/>
+         {... register("email",{
+            required:{
+                value:true,
+                message:"email is required"
+            }
+          })}
+
+         />
+           {errors.email?.type==="required" && <p
+      className='form__error'>{errors.email.message}</p>}
     </div>
 
     <div className="form__gp">
@@ -66,10 +87,23 @@ const SignUp = () => {
         </label>
         <input
          type="password" 
-         name="password" 
+    
          id="password" 
          className='form__input'
-         required/>
+         {... register("password",{
+            required:{
+                value:true,
+                message:"password is required"
+            },
+            minLength:{
+                value:6,
+                message:"passowrd should be at-least 6 characters"
+            }
+          })}
+     />
+      {errors.password?.type==="minLength" && <p className='form__error'>{errors.password.message}</p>}
+ {errors.password?.type==="required" && <p
+ className='form__error'>{errors.password.message}</p>}
     </div>
  
 

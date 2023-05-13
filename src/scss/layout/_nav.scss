@@ -9,7 +9,7 @@
 }
 .nav {
  display: none;
- @include screen-md {
+ @include screen-l {
     display: block;
     
  }
@@ -36,7 +36,7 @@
     z-index: 100;
     border:none;
 
-    @include screen-md{
+    @include screen-l{
         display: none;
     }
 

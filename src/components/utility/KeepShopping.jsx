@@ -4,7 +4,7 @@ const KeepShopping = ({title}) => {
   return (
     <section className='container m-5'>
     <p className='txt--sec'>{title}</p>
-    <Link to="/shop" className='btn btn--filled m-5'> keep shopping</Link>
+    <Link to="/search" className='btn btn--filled m-5'> keep shopping</Link>
   </section>
   
 

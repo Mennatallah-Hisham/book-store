@@ -9,8 +9,12 @@ const BookInfo = () => {
  
     
 
-    <p className='clr-txt txt--sm'>sStore, manipulate, and access data effectively and boost the performance of your applications</p>
+    
+    <div className="flex-2">
+    <p className='clr-sec card__price'>rate</p>
     <p className='clr-sec card__price'>price</p>
+    </div>
+   
     </div>
 
     </React.Fragment>

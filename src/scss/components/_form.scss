@@ -1,5 +1,6 @@
 @use "../abstract" as *;
 
+
 .form-flex{
 
     background-color: red;
@@ -22,11 +23,18 @@
 
 }
 
-.form__cont{
-
+.form{
+    &__cont{
+        
  margin:4rem;
  max-width: 50rem;
  @include screen-md{
     margin:4rem auto;
  }
+
+    }
+    &__error{
+        color:red;
+        font-size: 1.2rem;
+    }
 }

@@ -13,13 +13,31 @@ const Home = () => {
   // const setStore =()=>{
    
   // }
+  const getBooks = async()=>{
+    try{
+
+      const res = await fetch("https://api.itbook.store/1.0/new");
+      if(!res.ok){
+        throw new Error ("something went wrong");
+
+      }
+      const data = await res.json();
+      console.log(data.books);
+    }catch(e){
+      console.log(e);
+    }
+
+  }
 
   useEffect(()=>{
     console.log("hoo");
     dispatch(authActions.setAuth());
     dispatch(cartActions.setCart());
     dispatch(wishlistActions.setWishlist());
-  },[])
+    // getBooks();
+  },[]);
+
+  
 
  
 
