@@ -1,25 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { cartActions } from '../../store/CartSlice';
-import { useDispatch } from 'react-redux';
+import AddToCart from '../buttons/AddToCart';
 
-const BookActions = ({id}) => {
-  const dispatch =useDispatch();
 
-  const addToCart =()=>{
-    dispatch(cartActions.addToCart());
-  }
+const BookActions = ({book}) => {
+
 
   return (
     <div className='btns'>
-        <Link className='btn btn--sm btn--outline' to={`/${id}/book`}>
+        <Link className='btn btn--sm btn--outline' to={`/${book.id}/book`}>
 
 
      view
         </Link>
-        <button className='btn btn--sm btn--filled'>
-            Add to cart
-        </button>
+        <AddToCart book={book}/>
+     
     </div>
   )
 }

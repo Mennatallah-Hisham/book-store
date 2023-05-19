@@ -5,7 +5,7 @@ const BookCard = (props) => {
   return (
   <article className='card'>
    <BookInfo book={props}/>
-   <BookActions id={props.id}/>
+   <BookActions book={props}/>
 
   
 

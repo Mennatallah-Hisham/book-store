@@ -1,6 +1,6 @@
 import React from 'react'
 
-
+import AddToCart from '../buttons/AddToCart'
 const BookDetails = ({book}) => {
 
 
@@ -35,8 +35,11 @@ const BookDetails = ({book}) => {
 
 
 
-
-    <button className='btn btn--filled'> add to cart</button>
+<div className='flex-1'>
+<AddToCart book={book}/>
+    <button className='btn btn--outline'> add to wishlist</button>
+</div>
+  
 
     </div>
    

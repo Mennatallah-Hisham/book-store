@@ -15,15 +15,19 @@ const cartSlice = createSlice({
     reducers:{
    
         addItem(state,action){
+            console.log(action.payload);
+            
             // quantity ==1
             const item = action.payload;
-            const existingItem = getItemFromLocalStorage("cart",item.id);
+            
+            const existingItem = state.items.find(i=>i.id===item.id);
+      
             if(!existingItem){
                 state.items.push({
                     id:item.id,
                     price:item.price,
                     quantitiy:1,
-                    totalPrice:item.price,
+                    totalPrice:parseFloat(item.price.replace(/[^\d\.]*/g, '')),
                     name:item.title,
                     
                 });
@@ -32,11 +36,13 @@ const cartSlice = createSlice({
 
             }else{
                 existingItem.quantitiy++;
-                existingItem.total=existingItem.price+existingItem.totalPrice;
+                existingItem.totalPrice=parseFloat(existingItem.price.replace(/[^\d\.]*/g, ''))+existingItem.totalPrice;
+           
 
 
             }
-           
+            
+        
             storeInLocaleStorage("cart",state.items);
       
 
@@ -72,7 +78,8 @@ const cartSlice = createSlice({
         }
         ,
         setCart(state){
-            state.items = getKeyValueFromLocalStorage("cart","{}");
+            state.items = getKeyValueFromLocalStorage("cart","[]");
+
 
             
         },
@@ -82,10 +89,7 @@ const cartSlice = createSlice({
 
          
         },
-        // setCart
-        // onload if cart is in localstorage
-        // set state.items of cart == localstorage cart arr
-        // getKeyValueFromLocalStorage("cart",[]);
+       
     }
 });
 

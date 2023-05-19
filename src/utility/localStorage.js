@@ -9,13 +9,15 @@ export function storeInLocaleStorage(key,value){
 
 
 // return arr if exists, else set key to inital val
+
 export function getKeyValueFromLocalStorage(key ,initialVal){
+  console.log(key);
     if(!localStorage.getItem(key)){
 
     
         localStorage.setItem(key,initialVal);
     }
-        return JSON.parse( localStorage.getItem(key));
+        return JSON.parse(localStorage.getItem(key));
     
    
 
@@ -25,6 +27,7 @@ export function getKeyValueFromLocalStorage(key ,initialVal){
 
 
 //return book from arr
+// changeed find to filter 
 export function getItemFromLocalStorage(key,Id){
     if(localStorage.getItem(key)){
         const arr =JSON.parse( localStorage.getItem(key));
