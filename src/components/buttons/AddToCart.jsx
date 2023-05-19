@@ -2,7 +2,7 @@ import React from 'react'
 import { cartActions } from '../../store/CartSlice';
 import { useDispatch } from 'react-redux';
 const AddToCart = ({book}) => {
-    console.log(book);
+   
       const dispatch =useDispatch();
 
   const addToCart =()=>{

@@ -1,11 +1,9 @@
 import React from 'react'
-
-const WishlistActions = () => {
+import RemoveFromWishlist from '../buttons/RemoveFromWishlist'
+const WishlistActions = ({id}) => {
   return (
     <div className='btns'>
-    <button className='btn btn--sm btn--outline'>
-      remove
-    </button>
+    <RemoveFromWishlist id={id}/>
     <button className='btn btn--sm btn--filled'>
         move to cart
     </button>

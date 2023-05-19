@@ -1,16 +1,28 @@
 import React from 'react'
-import WishlistCard from './WishlistCard'
 
-const WishlistItems = () => {
+import WishlistActions from './WishlistActions';
+import BookInfo from '../book/BookInfo';
+
+const WishlistItems = ({books}) => {
+  console.log(books);
   return (
+    
     <section className="container flex-2 m-5">
-<WishlistCard/>
-<WishlistCard/>
-<WishlistCard/>
-<WishlistCard/>
-<WishlistCard/>
-<WishlistCard/>
-<WishlistCard/>
+
+      {
+books.map((book)=>(
+<article  className='card' id={book.id}>
+
+<BookInfo book={book} />
+<WishlistActions id={book.id}/>
+</article>)
+)
+
+
+
+      }
+
+
     </section>
   )
 }

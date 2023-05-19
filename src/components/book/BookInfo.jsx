@@ -1,7 +1,7 @@
 import React from 'react'
 
 const BookInfo = ({book}) => {
-
+console.log(book);
 
  
   return (
