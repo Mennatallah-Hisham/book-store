@@ -44,12 +44,7 @@ const NavList = ({ismobile , onToggle}) => {
 
        </li>
         
-       <li>
-           <Link to="/book"
-             onClick={toggleNav}
-           className="nav__link">view book</Link>
-           
-       </li>
+    
        <li>
            <Link to="/search"
              onClick={toggleNav}
@@ -104,11 +99,7 @@ const NavList = ({ismobile , onToggle}) => {
 
        </li>
          
-       <li>
-           <Link to="/book"
-           className="nav__link">view book</Link>
-           
-       </li>
+  
        <li>
            <Link to="/search"
            className="nav__link"><Search/></Link>

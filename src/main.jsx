@@ -37,7 +37,7 @@ children:[
   element:<Shop/>
 }
 ,{
-  path:'/book',
+  path:':id/book',
   element:<ViewBook/>
 }
 ,{

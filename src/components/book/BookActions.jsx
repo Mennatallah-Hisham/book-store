@@ -1,11 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const BookActions = () => {
+const BookActions = ({id}) => {
+
   return (
     <div className='btns'>
-        <button className='btn btn--sm btn--outline'>
+        <Link className='btn btn--sm btn--outline' to={`/${id}/book`}>
+
+
      view
-        </button>
+        </Link>
         <button className='btn btn--sm btn--filled'>
             Add to cart
         </button>

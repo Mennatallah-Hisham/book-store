@@ -1,11 +1,11 @@
 import React from 'react'
 import BookActions from './BookActions';
 import BookInfo from './BookInfo';
-const BookCard = () => {
+const BookCard = (props) => {
   return (
   <article className='card'>
-   <BookInfo/>
-   <BookActions/>
+   <BookInfo book={props}/>
+   <BookActions id={props.id}/>
 
   
 

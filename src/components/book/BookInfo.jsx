@@ -1,18 +1,21 @@
 import React from 'react'
 
-const BookInfo = () => {
+const BookInfo = ({book}) => {
+
+
+ 
   return (
  <React.Fragment>
-      <img className="card__img" src="./book.jpg" alt="book"/>
+      <img className="card__img" src={book.image} alt={book.subtitle}/>
     <div className='card__content'>
-    <p className="clr-pri txt--m">Hands-On Data Structures and Algorithms with Python, 3rd Edition</p>
+    <p className="clr-pri txt--m">{book.title}</p>
  
     
 
     
     <div className="flex-2">
     <p className='clr-sec card__price'>rate</p>
-    <p className='clr-sec card__price'>price</p>
+    <p className='clr-sec card__price'>{book.price}</p>
     </div>
    
     </div>
