@@ -1,7 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { cartActions } from '../../store/CartSlice';
+import { useDispatch } from 'react-redux';
 
 const BookActions = ({id}) => {
+  const dispatch =useDispatch();
+
+  const addToCart =()=>{
+    dispatch(cartActions.addToCart());
+  }
 
   return (
     <div className='btns'>
