@@ -1,14 +1,20 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const BookInfo = ({book}) => {
-console.log(book);
+
 
  
   return (
  <React.Fragment>
       <img className="card__img" src={book.image} alt={book.subtitle}/>
     <div className='card__content'>
-    <p className="clr-pri txt--m">{book.title}</p>
+    <Link className="clr-pri txt--m" to={`/${book.id}/book`}>
+
+  {book.title}
+
+view
+   </Link>
  
     
 

@@ -1,17 +1,18 @@
 import React from 'react'
 import CartActions from './CartActions'
 
-const CartCard = () => {
+const CartCard = ({book}) => {
+  console.log(book);
   return (
  <article className='flex'>
 
-<img src="./book.jpg" width="120px"/>
+<img src={book.image} width="120px"/>
 <div>
-    <p className='txt--sec'> title</p>
-    <p className='clr-sec'> 65</p>
+    <p className='txt--sec'> {book.title}</p>
+    <p className='clr-sec'> {book.totalPrice}</p>
 </div>
-<p className='txt--sec'>1</p>
-    <CartActions/>
+<p className='txt--sec'>{book.quantity}</p>
+    <CartActions book={book}/>
 
  </article>
   )

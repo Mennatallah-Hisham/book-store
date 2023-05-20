@@ -42,7 +42,7 @@ const authSlice =createSlice({
         setAuth(state){
             state.isLoggedIn= getKeyValueFromLocalStorage("logedIn",false);
            state.user=getKeyValueFromLocalStorage("user","{}");
-           console.log(state.user);
+    
         }
         
     }

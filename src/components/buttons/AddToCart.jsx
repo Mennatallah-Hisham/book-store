@@ -10,7 +10,8 @@ const AddToCart = ({book}) => {
         id:book.id ? book.id :book.isbn13,
         price:book.price,
         image:book.image,
-        title:book.title
+        title:book.title,
+        image:book.image
 
     }));
   }

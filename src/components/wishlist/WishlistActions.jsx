@@ -1,10 +1,32 @@
 import React from 'react'
-import RemoveFromWishlist from '../buttons/RemoveFromWishlist'
-const WishlistActions = ({id}) => {
+import { wishlistActions } from '../../store/WishlistSlice';
+import { cartActions } from '../../store/CartSlice';
+import { useDispatch } from 'react-redux';
+const WishlistActions = ({book}) => {
+
+  const dispatch =useDispatch();
+    const removeItem =()=>{
+        dispatch(wishlistActions.removeItem(book.id));
+
+    }
+    const moveToCart=()=>{
+      removeItem();
+      dispatch(cartActions.addItem({
+        id:book.id ? book.id :book.isbn13,
+        price:book.price,
+        image:book.image,
+        title:book.title,
+        image:book.image
+
+    }));
+  }
   return (
     <div className='btns'>
-    <RemoveFromWishlist id={id}/>
-    <button className='btn btn--sm btn--filled'>
+
+    <button className='btn btn--sm btn--outline' onClick={removeItem}>
+    remove from wishlist
+  </button>
+    <button className='btn btn--sm btn--filled' onClick={moveToCart}>
         move to cart
     </button>
 </div>

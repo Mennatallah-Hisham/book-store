@@ -10,6 +10,9 @@ import { useSelector } from 'react-redux';
 const Wishlist = () => {
 
   const wishlistArr = useSelector(state=>state.wishlist.items);
+  if(wishlistArr===undefined){
+    wishlistArr=[];
+  }
   console.log(wishlistArr);
 
   
@@ -18,7 +21,7 @@ const Wishlist = () => {
         <Header title="your wishlist"/>
 
         {
-        wishlistArr.Arr===0 ?
+        wishlistArr.length === 0  ?
         <KeepShopping title="0 books in your wishlist"/>
        
         :

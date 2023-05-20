@@ -26,16 +26,18 @@ const cartSlice = createSlice({
                 state.items.push({
                     id:item.id,
                     price:item.price,
-                    quantitiy:1,
+                    quantity:1,
                     totalPrice:parseFloat(item.price.replace(/[^\d\.]*/g, '')),
-                    name:item.title,
+                    title:item.title,
+                    image:item.image
+
                     
                 });
             
 
 
             }else{
-                existingItem.quantitiy++;
+                existingItem.quantity++;
                 existingItem.totalPrice=parseFloat(existingItem.price.replace(/[^\d\.]*/g, ''))+existingItem.totalPrice;
            
 
@@ -48,15 +50,15 @@ const cartSlice = createSlice({
 
         },
         removeItem(state,action){
-            const item =action.payload;
-            const existingItem=getItemFromLocalStorage("cart",item.id);
-            if( existingItem.quantitiy===1){
-                state.items.filter(i=>i.id!== item.id);
+            const itemId =action.payload;
+            const existingItem=state.items.find(i=>i.id===itemId);
+            if( existingItem.quantity===1){
+              state.items =  state.items.filter(i=>i.id!== itemId);
 
             }
             else{
-                existingItem.quantitiy--;
-                existingItem.totalPrice=existingItem.totalPrice-existingItem.price;
+                existingItem.quantity--;
+                existingItem.totalPrice=existingItem.totalPrice-parseFloat(existingItem.price.replace(/[^\d\.]*/g, ''));
             }
 
             storeInLocaleStorage("cart",state.items);
@@ -64,7 +66,7 @@ const cartSlice = createSlice({
         },
         deleteItem(state,action){
             const itemId=action.payload;
-            state.items.filter(i=>i.id!== item.id);
+          state.items=  state.items.filter(i=>i.id!== itemId);
             storeInLocaleStorage("cart",state.items);
 
         },

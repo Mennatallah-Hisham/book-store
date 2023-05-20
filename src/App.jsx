@@ -11,7 +11,7 @@ import { Outlet } from "react-router-dom";
 function App() {
   const dispatch = useDispatch();
   useEffect(()=>{
-    console.log("hoo");
+
     dispatch(authActions.setAuth());
     dispatch(cartActions.setCart());
     dispatch(wishlistActions.setWishlist());

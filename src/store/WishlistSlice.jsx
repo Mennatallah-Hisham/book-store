@@ -23,7 +23,7 @@ const wishlistSlice = createSlice({
         },
         removeItem(state,action){
             const itemId = action.payload;
-            console.log(itemId);
+         
         
            state.items= state.items.filter(i=>i.id!==itemId);
            

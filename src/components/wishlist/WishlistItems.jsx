@@ -14,7 +14,7 @@ books.map((book)=>(
 <article  className='card' id={book.id}>
 
 <BookInfo book={book} />
-<WishlistActions id={book.id}/>
+<WishlistActions book={book}/>
 </article>)
 )
 

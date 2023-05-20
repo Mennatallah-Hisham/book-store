@@ -1,12 +1,13 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
 import Header from '../components/layout/Header';
-
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../store/CartSlice';
+import { useNavigate } from 'react-router-dom';
 const CheckOut = () => {
-    const formSubmitHandler =(e)=>{
-        e.preventDefault();
-    }
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  
 
     const {
       register,
@@ -16,6 +17,9 @@ const CheckOut = () => {
 
     const submitHandler=(data)=>{
       console.log(data);
+      dispatch(cartActions.resetCart());
+      navigate("/cart");
+
     }
   return (
 
