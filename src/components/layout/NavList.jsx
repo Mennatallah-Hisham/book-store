@@ -37,12 +37,7 @@ const NavList = ({ismobile , onToggle}) => {
            
        </li>
    
-       <li>
-           <Link to="/contact"
-             onClick={toggleNav}
-           className="nav__link">contact us</Link>
-
-       </li>
+   
         
     
        <li>
@@ -56,13 +51,18 @@ const NavList = ({ismobile , onToggle}) => {
        <li>
            <Link to="/wishlist"
              onClick={toggleNav}
-           className="nav__link"><Wishlist/></Link>
+          ><Wishlist/></Link>
            
        </li>
        <li>
            <Link to="/cart"
              onClick={toggleNav}
-           className="nav__link"><Cart/></Link>
+       >
+       
+
+            <Cart/>
+          
+            </Link>
            
        </li>
        {isLoggedIn
@@ -93,11 +93,7 @@ const NavList = ({ismobile , onToggle}) => {
            
        </li>
    
-       <li>
-           <Link to="/contact"
-           className="nav__link">contact us</Link>
-
-       </li>
+   
          
   
        <li>
@@ -107,12 +103,12 @@ const NavList = ({ismobile , onToggle}) => {
        </li>
        <li>
            <Link to="/wishlist"
-           className="nav__link"><Wishlist/></Link>
+         ><Wishlist/></Link>
            
        </li>
        <li>
            <Link to="/cart"
-           className="nav__link"><Cart/></Link>
+       ><Cart/></Link>
            
        </li>
        {isLoggedIn

@@ -9,6 +9,7 @@ import { cartActions } from '../../store/CartSlice';
 const CartDetails = ({books}) => {
   const dispatch = useDispatch();
   const quantity= useSelector((state)=>state.cart.totalQuantity);
+  const totalPrice =useSelector((state)=>state.cart.totalPrice);
   const resetCart=()=>{
     dispatch(cartActions.resetCart());
 
@@ -27,8 +28,8 @@ const CartDetails = ({books}) => {
 </section>
 
 
+<p className='txt--sec'> total Price : {`${totalPrice}$`}</p>
 
-// after check out reset cart
     <Link to="/checkout" className="btn btn--filled m-5">
         Checkout
     </Link>

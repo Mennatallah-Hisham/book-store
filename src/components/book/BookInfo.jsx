@@ -19,10 +19,9 @@ view
     
 
     
-    <div className="flex-2">
-    <p className='clr-sec card__price'>rate</p>
+
     <p className='clr-sec card__price'>{book.price}</p>
-    </div>
+  
    
     </div>
 

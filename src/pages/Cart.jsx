@@ -9,6 +9,7 @@ const Cart = () => {
 
 
   const cartItems =useSelector((state)=>state.cart.items);
+
   if(cartItems===undefined){
     cartItems=[];
   }

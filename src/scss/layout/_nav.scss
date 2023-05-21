@@ -1,12 +1,5 @@
 @use "../abstract" as *;
-.nav-logo{
-    font-size: 2rem;
-    text-transform: capitalize;
-    letter-spacing: 0.3rem;
-    z-index: 100;
-    color:$clr-primary;
 
-}
 .nav {
  display: none;
  @include screen-l {
@@ -47,10 +40,12 @@
   &__list{
       @include flex-center;
 
-      gap:2rem;
+      gap:4rem;
+  
 
   }
   &__link{
+
       font-size: 1.8rem;
       text-transform: capitalize;
       padding:0.3rem 2rem;

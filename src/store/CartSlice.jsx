@@ -100,7 +100,7 @@ const cartSlice = createSlice({
         setCart(state){
             state.items = getKeyValueFromLocalStorage("cart","[]");
             state.totalQuantity = getKeyValueFromLocalStorage("cartQuantity","0");
-            state.totalQuantity = getKeyValueFromLocalStorage("totalPrice","0");
+            state.totalPrice = getKeyValueFromLocalStorage("totalPrice","0");
 
 
             

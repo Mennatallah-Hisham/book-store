@@ -1,8 +1,10 @@
 @use "../abstract" as *;
 
 .flex{
+    border:1px solid red;
     @include flex-row;
-    gap:15rem;
+    gap:5rem;
+    align-items: center;
 }
 
 .flex-col--xs{
@@ -46,16 +48,7 @@
     gap:2rem;
 }
 
-.icon--xs{
-    height:2rem;
-     width: 2rem;
-   
-}
-.icon--sm{
-    height:3rem;
-     width: 3rem;
-   
-}
+
 .txt--center{
     text-align: center;
     margin-inline:auto;

@@ -1,0 +1,47 @@
+@use "../abstract" as *;
+
+
+.icon{
+    &-wrapper{
+        position:relative;
+        padding:0.3rem 2rem;
+        @include transition;
+        &:link,
+        &:visited{
+            color:$clr-primary;
+  
+        }
+  
+        &:hover,
+        &:active{
+            border-bottom: 3px solid $clr-secondary;
+            background-color: rgba($clr-secondary,0.3);
+        }
+ 
+    }
+    &-label{
+        color:$clr-neutral;
+background-color: $clr-primary;
+border-radius: 50%;
+width:2.3rem;
+height: 2.3rem;
+text-align: center;
+font-size: 1.6rem;
+position:absolute;
+top:-1rem;
+right:-1rem;
+
+    }
+  
+ 
+    &--xs{
+        height:2rem;
+         width: 2rem;
+       
+    }
+    &--sm{
+        height:3rem;
+         width: 3rem;
+       
+    }
+}

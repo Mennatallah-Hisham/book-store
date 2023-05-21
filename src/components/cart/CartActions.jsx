@@ -39,7 +39,8 @@ const CartActions = ({book}) => {
   }
 
   return (
-    <div>
+    <div className='flex'>
+      <p className='txt--sec'> {book.quantity}</p>
 
 <div className='btns'>
 <button className='btn btn--sm btn--sec'
@@ -51,8 +52,11 @@ onClick={
 }>+</button>
 </div>
 
-        <button className='btn btn--sm btn--filled ' onClick={deleteItem}> remove</button>
+<div className="btns m-5">
+<button className='btn btn--sm btn--filled ' onClick={deleteItem}> remove</button>
         <button className='btn btn--sm btn--outline ' onClick={moveToCart}> move to wishlist</button>
+</div>
+      
     </div>
   )
 }

@@ -29,7 +29,14 @@
 
 }
 
+.footer .logo{
+    color:$clr-neutral;
 
+}
 .logo{
-    font-size: 5rem;
+    font-size: 2rem;
+    text-transform: capitalize;
+    letter-spacing: 0.3rem;
+    z-index: 100;
+    color:$clr-primary;
 }

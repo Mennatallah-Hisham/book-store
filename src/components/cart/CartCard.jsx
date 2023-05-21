@@ -6,13 +6,14 @@ const CartCard = ({book}) => {
   return (
  <article className='flex'>
 
-<img src={book.image} width="120px"/>
-<div>
+
+<img src={book.image} width="200px"/>
     <p className='txt--sec'> {book.title}</p>
-    <p className='clr-sec'> {book.totalPrice}</p>
-</div>
-<p className='txt--sec'>{book.quantity}</p>
-    <CartActions book={book}/>
+    <p className='txt--pri'> {book.price}</p>
+   
+
+
+    <CartActions book={book} />
 
  </article>
   )
