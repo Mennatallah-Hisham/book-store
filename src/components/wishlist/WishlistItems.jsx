@@ -4,7 +4,7 @@ import WishlistActions from './WishlistActions';
 import BookInfo from '../book/BookInfo';
 
 const WishlistItems = ({books}) => {
-  console.log(books);
+ 
   return (
     
     <section className="container flex-2 m-5">

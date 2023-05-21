@@ -4,10 +4,10 @@ import Books from '../components/book/Books';
 
 import Header from '../components/layout/Header';
 import SearchBar from '../components/search/SearchBar';
-import SubTitle from '../components/utility/SubTitle';
+
 import { getBooks } from '../utility/FetchApi';
 const Search = () => {
-  const [searchTerm , setSearchTerm]=useState("");
+  const [searchTerm , setSearchTerm]=useState("web development");
   const [books, setBooks]=useState([]);
 
   const getSearchTerm= (term)=>{
@@ -25,6 +25,7 @@ const Search = () => {
     <Header title="search" body="All Books In One Place"/>
 
       <SearchBar onSearch={getSearchTerm}/>
+  
  {books===undefined ? <p> search for you new book </p> :  <Books books={books}/>   }
  
    

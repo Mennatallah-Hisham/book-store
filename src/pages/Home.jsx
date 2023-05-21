@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect , useState} from 'react';
 import Banner from '../components/Banner';
 import Header from '../components/layout/Header';
-import Categories from "../components/book/Categories";
+
 import Books from '../components/book/Books';
 
 
@@ -27,7 +27,7 @@ getBooks("https://api.itbook.store/1.0/new").then((data)=>setBooks(data.books));
   return (
     <React.Fragment>
     <Header title="find your next book"/>
-    <Categories/>
+    {/* <Categories/> */}
 <Books books={books}/>
     <section>
 

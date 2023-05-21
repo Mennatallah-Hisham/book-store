@@ -1,12 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { ItemExistsInLocaleStorage ,storeInLocaleStorage ,getItemFromLocalStorage, getKeyValueFromLocalStorage} from "../utility/localStorage";
 
+const storeState =(items , quantity,totalPrice)=>{
+    storeInLocaleStorage("cart",items);
+    storeInLocaleStorage("cartQuantity",quantity);
+    storeInLocaleStorage("totalPrice",totalPrice);
+}
 const initialState ={
     items:[],
+    totalQuantity:0,
+    totalPrice:0,
 
   
   
 }
+
 
 
 const cartSlice = createSlice({
@@ -15,7 +23,7 @@ const cartSlice = createSlice({
     reducers:{
    
         addItem(state,action){
-            console.log(action.payload);
+          
             
             // quantity ==1
             const item = action.payload;
@@ -43,9 +51,11 @@ const cartSlice = createSlice({
 
 
             }
+            state.totalQuantity++;
+            state.totalPrice+=parseFloat(item.price.replace(/[^\d\.]*/g, ''));
             
-        
-            storeInLocaleStorage("cart",state.items);
+        storeState(state.items,state.totalQuantity,state.totalPrice);
+            
       
 
         },
@@ -60,14 +70,22 @@ const cartSlice = createSlice({
                 existingItem.quantity--;
                 existingItem.totalPrice=existingItem.totalPrice-parseFloat(existingItem.price.replace(/[^\d\.]*/g, ''));
             }
-
-            storeInLocaleStorage("cart",state.items);
+            state.totalQuantity--;
+            state.totalPrice-=parseFloat(existingItem.price.replace(/[^\d\.]*/g, ''));
+            
+            storeState(state.items,state.totalQuantity,state.totalPrice);
+                
           
         },
         deleteItem(state,action){
             const itemId=action.payload;
+            const existingItem=state.items.find(i=>i.id===itemId);
+            state.totalQuantity=state.totalQuantity - existingItem.quantity;
+            state.totalPrice-=existingItem.totalPrice;
           state.items=  state.items.filter(i=>i.id!== itemId);
-            storeInLocaleStorage("cart",state.items);
+            
+          storeState(state.items,state.totalQuantity,state.totalPrice);
+              
 
         },
 
@@ -81,13 +99,17 @@ const cartSlice = createSlice({
         ,
         setCart(state){
             state.items = getKeyValueFromLocalStorage("cart","[]");
+            state.totalQuantity = getKeyValueFromLocalStorage("cartQuantity","0");
+            state.totalQuantity = getKeyValueFromLocalStorage("totalPrice","0");
 
 
             
         },
         resetCart(state){
             state.items=[];
-            storeInLocaleStorage("cart",state.items);
+            state.totalQuantity=0;
+            state.totalPrice=0
+            storeState(state.items,state.totalQuantity,state.totalPrice);
 
          
         },

@@ -12,7 +12,7 @@ const Cart = () => {
   if(cartItems===undefined){
     cartItems=[];
   }
-  console.log(cartItems);
+
   return (
     <React.Fragment>
     <Header title="shopping cart"/>

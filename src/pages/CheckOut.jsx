@@ -1,12 +1,14 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
 import Header from '../components/layout/Header';
-import { useDispatch } from 'react-redux';
+import { useDispatch , useSelector} from 'react-redux';
 import { cartActions } from '../store/CartSlice';
 import { useNavigate } from 'react-router-dom';
 const CheckOut = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const totalPrice= useSelector((state)=>state.cart.totalPrice);
   
 
     const {
@@ -24,7 +26,7 @@ const CheckOut = () => {
   return (
 
   <React.Fragment>
-     <Header title ="total price : 50$"/>
+     <Header title ={`total price : ${totalPrice}$`}/>
      
     <form className=" form form__cont" onSubmit={handleSubmit(submitHandler)}>
        <div className='form__gp'>

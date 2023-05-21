@@ -9,7 +9,7 @@ const EmptyCart = () => {
   if(wishlistArr===undefined){
     wishlistArr=[];
   }
-  console.log(wishlistArr);
+ 
   return (
 <React.Fragment>
 <KeepShopping title="0 books in your cart"/>

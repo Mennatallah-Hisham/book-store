@@ -1,11 +1,21 @@
 import {createSlice}from "@reduxjs/toolkit";
 import { storeInLocaleStorage , ItemExistsInLocaleStorage ,getKeyValueFromLocalStorage} from "../utility/localStorage";
 
+
+const storeState =(items , quantity)=>{
+    storeInLocaleStorage("wishlist",items);
+
+    storeInLocaleStorage("WishlistQuantity",quantity);
+    console.log(quantity);
+}
 const initialState={
     items:[],
+    totalQuantity:0,
+    
   
   
 }
+
 const wishlistSlice = createSlice({
     name:"wishlist",
     initialState,
@@ -17,8 +27,10 @@ const wishlistSlice = createSlice({
 
       
             state.items.push(item);
-            storeInLocaleStorage("wishlist",state.items);
+            state.totalQuantity++;
+          storeState(state.items,state.totalQuantity);
             }
+
 
         },
         removeItem(state,action){
@@ -27,7 +39,8 @@ const wishlistSlice = createSlice({
         
            state.items= state.items.filter(i=>i.id!==itemId);
            
-            storeInLocaleStorage("wishlist",state.items);
+           state.totalQuantity--;
+           storeState(state.items,state.totalQuantity);
 
             
 
@@ -44,12 +57,10 @@ const wishlistSlice = createSlice({
         ,
         setWishlist(state){
             state.items = getKeyValueFromLocalStorage("wishlist","[]");
+            state.totalQuantity=getKeyValueFromLocalStorage("wishlistQuantity","0");
 
         }
-        // setWishlist
-        // onload if wishlist is in localstorage
-        // set state.items of whishlist == localstorage wishlist arr
-        // getKeyValueFromLocalStorage("wishlist",[]);
+       
 
     }
 });

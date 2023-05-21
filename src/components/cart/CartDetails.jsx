@@ -2,19 +2,21 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import SubTitle from '../utility/SubTitle';
 import CartCard from './CartCard';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../../store/CartSlice';
 
 
 const CartDetails = ({books}) => {
   const dispatch = useDispatch();
+  const quantity= useSelector((state)=>state.cart.totalQuantity);
   const resetCart=()=>{
     dispatch(cartActions.resetCart());
 
   }
+
   return (
   <section className='container'>
-    <SubTitle title="1 book in cart"/>
+    <SubTitle title={quantity===1?`${quantity} book in cart` :`${quantity} books in cart`  }/>
 
 <section className='flex-2 m-5'>
   {books.map((book)=>(
