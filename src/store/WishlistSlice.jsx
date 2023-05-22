@@ -6,8 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const storeState =(items , quantity)=>{
     storeInLocaleStorage("wishlist",items);
-
-    storeInLocaleStorage("WishlistQuantity",quantity);
+   
+    storeInLocaleStorage("wishlistQuantity",quantity);
  
 }
 const notify =(msg)=>{
