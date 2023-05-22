@@ -3,7 +3,7 @@
     text-align: center;
     background-color: $clr-primary;
     color:$clr-neutral;
-    padding:2rem 0;
+    padding:2rem;
     &__cont{
 
         @include flex-row;
@@ -13,6 +13,7 @@
             justify-content: space-between;
          
             gap:0;
+            padding:2rem 0rem;
         }
      
 

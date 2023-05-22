@@ -31,7 +31,7 @@ const SearchBar = ({onSearch}) => {
           )
         
         } 
-        placeholder={errors.search?.type==="required" && " try agin"}/>
+        placeholder={errors.search?.type==="required"? " try agin" :"......"}/>
       
         <button className='btn btn--filled'>search</button>
     </form>

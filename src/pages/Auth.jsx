@@ -13,7 +13,7 @@ const toggleForm =()=>{
     <>
         {signUp ?<SignUp/>: <Login/>}
    
-        <p> Have an account ? <button onClick={toggleForm}>
+        <p className='txt--center txt--pri'> Have an account ? <button className='link' onClick={toggleForm}>
             {signUp ?"login" : "sign up"}
             
             </button></p>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 
 import Cross from '../icons/Cross';
 import Bars from '../icons/Bars';
@@ -28,7 +28,13 @@ const Nav = () => {
 <React.Fragment>
 
 <div className="nav-cont margin-b-m ">
-       <p className="logo"> Books’n’Things</p>
+<Link to="/"
+           className="logo" 
+         
+           
+       
+           >Books’n’Things</Link>
+      
        <button className="nav-btn" onClick={toggleNav}>
            {openNav?  <Cross></Cross> :<Bars/>}
 

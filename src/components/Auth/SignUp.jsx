@@ -11,24 +11,18 @@ const SignUp = () => {
     const navigate = useNavigate();
 
     const dispatch = useDispatch();
-    const signUpHandler=()=>{
+  
 
-        dispatch(authActions.signUp({
-            name:"menna",
-            email:"menna@gmail.com",
-            password:"778852",
-        }))
-
-    }
-
-    const formSubmitHandler= (e)=>{
-        e.preventDefault();
-        signUpHandler();
-        navigate("/");
-    }
-
+ 
     const submitHandler =(data)=>{
-        console.log(data);
+      
+        dispatch(authActions.signUp({
+            name:data.username,
+            email:data.email,
+            password:data.password
+        }));
+        navigate("/");
+
     }
   return (
 <React.Fragment>

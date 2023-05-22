@@ -4,7 +4,7 @@ import {useSelector} from "react-redux";
 
 const Cart = () => {
   const quantity= useSelector((state)=>state.cart.totalQuantity);
-  console.log(quantity);
+
   return (
     <div className="icon-wrapper">
     <p className="icon-label">{quantity}</p>

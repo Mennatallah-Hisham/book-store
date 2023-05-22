@@ -19,17 +19,16 @@ const Login = () => {
 
 
     const onSubmit= (user)=>{
-        console.log(user);
-        console.log(authUser);
+     
         if(user.email === authUser.email && user.password ===authUser.password){
          
 
-            dispatch(authActions.login);
-           navigate('/shop');
+            dispatch(authActions.login());
+           navigate('/cart');
          
         }else{
             setError("true");
-            //error msg
+         
 
             
         }

@@ -4,7 +4,7 @@ import { ItemExistsInLocaleStorage ,storeInLocaleStorage ,getItemFromLocalStorag
 const storeState =(items , quantity,totalPrice)=>{
     storeInLocaleStorage("cart",items);
     storeInLocaleStorage("cartQuantity",quantity);
-    storeInLocaleStorage("totalPrice",totalPrice);
+    storeInLocaleStorage("totalPrice", Math.round(totalPrice));
 }
 const initialState ={
     items:[],

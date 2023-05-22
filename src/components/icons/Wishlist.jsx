@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 const Wishlist = () => {
   const quantity = useSelector((state)=>state.wishlist.totalQuantity);
-  console.log(quantity);
+
   return (
 
     <div className="icon-wrapper "  >

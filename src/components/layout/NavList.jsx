@@ -27,15 +27,7 @@ const NavList = ({ismobile , onToggle}) => {
     { ismobile==="true" ?
     <ul className="nav__list">
       
-    <li>
-           <Link to="/"
-           className="nav__link" 
-           onClick={toggleNav}
-           
-       
-           >Home</Link>
-           
-       </li>
+   
    
    
         
@@ -84,14 +76,7 @@ const NavList = ({ismobile , onToggle}) => {
     :
     <ul className="nav__list">
       
-    <li>
-           <Link to="/"
-           className="nav__link" 
-           
-       
-           >Home</Link>
-           
-       </li>
+ 
    
    
          

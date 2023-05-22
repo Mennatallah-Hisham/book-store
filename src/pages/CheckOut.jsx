@@ -10,6 +10,7 @@ const CheckOut = () => {
 
   const totalPrice= useSelector((state)=>state.cart.totalPrice);
   
+  const isLoggedIn = useSelector((state)=>state.auth.isLoggedIn);
 
     const {
       register,
@@ -18,9 +19,14 @@ const CheckOut = () => {
     }=useForm();
 
     const submitHandler=(data)=>{
-      console.log(data);
-      dispatch(cartActions.resetCart());
-      navigate("/cart");
+  console.log(isLoggedIn);
+      if(isLoggedIn){
+        dispatch(cartActions.resetCart());
+        navigate("/cart");
+      }else{
+        navigate("/auth");
+      }
+   
 
     }
   return (
