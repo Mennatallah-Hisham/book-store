@@ -1,7 +1,7 @@
 @use "../abstract" as *;
 
 .flex{
-    border:1px solid red;
+   
     @include flex-row;
     gap:5rem;
     align-items: center;
@@ -29,6 +29,9 @@
 }
 .mt-1{
     margin-top:1rem;
+}
+.mt-3{
+    margin-top:3rem;
 }
 .clr-sec{
     color:$clr-secondary !important;

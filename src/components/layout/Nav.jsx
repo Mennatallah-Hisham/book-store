@@ -28,7 +28,7 @@ const Nav = () => {
 <React.Fragment>
 
 <div className="nav-cont margin-b-m ">
-       <p className="logo"> home cinema</p>
+       <p className="logo"> Books’n’Things</p>
        <button className="nav-btn" onClick={toggleNav}>
            {openNav?  <Cross></Cross> :<Bars/>}
 

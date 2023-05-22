@@ -8,9 +8,9 @@ const CartCard = ({book}) => {
 
 
 <img src={book.image} width="200px"/>
-    <p className='txt--sec'> {book.title}</p>
+    {/* <p className='txt--sec'> {book.title}</p>
     <p className='txt--pri'> {book.price}</p>
-   
+    */}
 
 
     <CartActions book={book} />

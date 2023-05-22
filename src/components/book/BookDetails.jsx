@@ -17,7 +17,7 @@ const BookDetails = ({book}) => {
      alt="book"
       className='book__img'/>
     <div className='book__content'>
-     <p className='clr-pri txt--xl'>{book.title}</p>
+     <p className='clr-pri txt--xl book__title'>{book.title}</p>
      <div className='book__nums'>
      <p className="clr-sec txt--l">{book.price}</p>
      <p className='clr-sec txt--l'>{book.rating}</p>

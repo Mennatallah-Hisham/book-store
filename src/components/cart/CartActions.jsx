@@ -52,7 +52,7 @@ onClick={
 }>+</button>
 </div>
 
-<div className="btns m-5">
+<div className="btns ">
 <button className='btn btn--sm btn--filled ' onClick={deleteItem}> remove</button>
         <button className='btn btn--sm btn--outline ' onClick={moveToCart}> move to wishlist</button>
 </div>
