@@ -18,7 +18,7 @@ const CartActions = ({book}) => {
           price:book.price,
           image:book.image,
           title:book.title,
-          image:book.image
+       
       }));
 
   }

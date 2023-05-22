@@ -13,7 +13,7 @@ const Wishlist = () => {
   if(wishlistArr===undefined){
     wishlistArr=[];
   }
-  console.log(wishlistArr);
+  
 
   
   return (

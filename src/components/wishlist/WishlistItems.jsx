@@ -11,7 +11,8 @@ const WishlistItems = ({books}) => {
 
       {
 books.map((book)=>(
-<article  className='card' id={book.id}>
+<article  className='card'
+ key={book.id}>
 
 <BookInfo book={book} />
 <WishlistActions book={book}/>

@@ -1,10 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ItemExistsInLocaleStorage ,storeInLocaleStorage , getKeyValueFromLocalStorage} from "../utility/localStorage";
+import {storeInLocaleStorage , getKeyValueFromLocalStorage} from "../utility/localStorage";
+import { toast } from 'react-toastify';
 
 const storeState =(items , quantity,totalPrice)=>{
     storeInLocaleStorage("cart",items);
     storeInLocaleStorage("cartQuantity",quantity);
     storeInLocaleStorage("totalPrice", Math.round(totalPrice));
+}
+
+const notify =(msg)=>{
+    toast(msg,{
+        position: toast.POSITION.BOTTOM_LEFT,
+    
+        theme:'light',
+     
+    });
+
 }
 const initialState ={
     items:[],
@@ -42,7 +53,7 @@ const cartSlice = createSlice({
                     
                 });
             
-
+                notify("book added to cart");
 
             }else{
                 existingItem.quantity++;
@@ -86,7 +97,7 @@ const cartSlice = createSlice({
             
           storeState(state.items,state.totalQuantity,state.totalPrice);
               
-
+          notify("book removed from cart");
         }
         ,
         setCart(state){

@@ -1,12 +1,23 @@
 import {createSlice}from "@reduxjs/toolkit";
-import { storeInLocaleStorage , ItemExistsInLocaleStorage ,getKeyValueFromLocalStorage} from "../utility/localStorage";
+import { storeInLocaleStorage ,getKeyValueFromLocalStorage} from "../utility/localStorage";
+import { toast } from 'react-toastify';
 
+import 'react-toastify/dist/ReactToastify.css';
 
 const storeState =(items , quantity)=>{
     storeInLocaleStorage("wishlist",items);
 
     storeInLocaleStorage("WishlistQuantity",quantity);
-    console.log(quantity);
+ 
+}
+const notify =(msg)=>{
+    toast(msg,{
+        position: toast.POSITION.BOTTOM_LEFT,
+    
+        theme:'light',
+     
+    });
+
 }
 const initialState={
     items:[],
@@ -29,8 +40,13 @@ const wishlistSlice = createSlice({
             state.items.push(item);
             state.totalQuantity++;
           storeState(state.items,state.totalQuantity);
+          notify("book added to wishlist");
+            }else{
+
+                notify("book already in wishlist");
             }
 
+           
 
         },
         removeItem(state,action){
@@ -42,7 +58,7 @@ const wishlistSlice = createSlice({
            state.totalQuantity--;
            storeState(state.items,state.totalQuantity);
 
-            
+           notify("book removed from wishlist");
 
 
 

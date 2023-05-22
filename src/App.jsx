@@ -6,6 +6,7 @@ import { authActions } from "./store/AuthSlice";
 import { cartActions } from "./store/CartSlice";
 import { wishlistActions } from "./store/WishlistSlice";
 import { Outlet } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
   return (
     <div className="App">
       <Nav/>
+      <ToastContainer toastStyle={{color:"#1b3764",
+    fontSize:"1.4rem",
+    textTransform:"capitalize"}} />
       <Outlet/>
       <Footer/>
       

@@ -21,7 +21,7 @@ const CartDetails = ({books}) => {
 
 <section className='flex-2 m-5'>
   {books.map((book)=>(
-    <CartCard id={book.id} book={book} />
+    <CartCard key={book.id} book={book} />
   ))}
 
    
