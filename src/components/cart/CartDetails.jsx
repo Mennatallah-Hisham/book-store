@@ -28,7 +28,7 @@ const CartDetails = ({books}) => {
 </section>
 
 
-<p className='txt--sec'> total Price : {`${totalPrice}$`}</p>
+<p className='txt--sec'> Total Price : {`${totalPrice}$`}</p>
 
 <div className='m-1'>
 <Link to="/checkout" className="btn btn--filled m-5">

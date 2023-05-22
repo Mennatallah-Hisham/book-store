@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 const storeState =(items , quantity,totalPrice)=>{
     storeInLocaleStorage("cart",items);
     storeInLocaleStorage("cartQuantity",quantity);
-    storeInLocaleStorage("totalPrice", Math.round(totalPrice));
+    storeInLocaleStorage("totalPrice", totalPrice);
 }
 
 const notify =(msg)=>{
@@ -57,13 +57,13 @@ const cartSlice = createSlice({
 
             }else{
                 existingItem.quantity++;
-                existingItem.totalPrice=parseFloat(existingItem.price.replace(/[^\d\.]*/g, ''))+existingItem.totalPrice;
+                existingItem.totalPrice=Math.round(parseFloat(existingItem.price.replace(/[^\d\.]*/g, ''))+existingItem.totalPrice);
            
 
 
             }
             state.totalQuantity++;
-            state.totalPrice+=parseFloat(item.price.replace(/[^\d\.]*/g, ''));
+            state.totalPrice+=Math.round(parseFloat(item.price.replace(/[^\d\.]*/g, '')));
             
         storeState(state.items,state.totalQuantity,state.totalPrice);
             
@@ -82,7 +82,7 @@ const cartSlice = createSlice({
                 existingItem.totalPrice=existingItem.totalPrice-parseFloat(existingItem.price.replace(/[^\d\.]*/g, ''));
             }
             state.totalQuantity--;
-            state.totalPrice-=parseFloat(existingItem.price.replace(/[^\d\.]*/g, ''));
+            state.totalPrice-=Math.round(parseFloat(existingItem.price.replace(/[^\d\.]*/g, '')));
             
             storeState(state.items,state.totalQuantity,state.totalPrice);
                 
