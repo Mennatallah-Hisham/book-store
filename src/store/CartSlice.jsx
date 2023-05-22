@@ -46,7 +46,7 @@ const cartSlice = createSlice({
                     id:item.id,
                     price:item.price,
                     quantity:1,
-                    totalPrice:parseFloat(item.price.replace(/[^\d\.]*/g, '')),
+                    totalPrice:Math.round(parseFloat(item.price.replace(/[^\d\.]*/g, ''))),
                     title:item.title,
                     image:item.image
 
