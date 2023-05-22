@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 const Cart = () => {
 
 
-  const cartItems =useSelector((state)=>state.cart.items);
+  let cartItems =useSelector((state)=>state.cart.items);
 
   if(cartItems===undefined){
     cartItems=[];

@@ -9,7 +9,7 @@ import WishlistItems from '../components/wishlist/WishlistItems';
 import { useSelector } from 'react-redux';
 const Wishlist = () => {
 
-  const wishlistArr = useSelector(state=>state.wishlist.items);
+let wishlistArr = useSelector(state=>state.wishlist.items);
   if(wishlistArr===undefined){
     wishlistArr=[];
   }
