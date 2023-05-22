@@ -28,29 +28,29 @@ export function getKeyValueFromLocalStorage(key ,initialVal){
 
 //return book from arr
 
-export function getItemFromLocalStorage(key,Id){
-    if(localStorage.getItem(key)){
-        const arr =JSON.parse( localStorage.getItem(key));
-        const existingItem = arr.find(i=>i.id===Id);
-       return existingItem;
-    }
-    return null;
+// export function getItemFromLocalStorage(key,Id){
+//     if(localStorage.getItem(key)){
+//         const arr =JSON.parse( localStorage.getItem(key));
+//         const existingItem = arr.find(i=>i.id===Id);
+//        return existingItem;
+//     }
+//     return null;
      
-}
+// }
 
 // check if book exists in arr
-export function ItemExistsInLocaleStorage(key,Id){
+// export function ItemExistsInLocaleStorage(key,Id){
 
-    if(localStorage.getItem(key)){
-        const arr = localStorage.getItem(key);
-        const existingItem = arr.find(i=>i.id===Id);
-      if(existingItem){
-        return true;
-      }
-      else{
-        return false;
-      }
+//     if(localStorage.getItem(key)){
+//         const arr = localStorage.getItem(key);
+//         const existingItem = arr.find(i=>i.id===Id);
+//       if(existingItem){
+//         return true;
+//       }
+//       else{
+//         return false;
+//       }
      
-    }
-    return false;
-}
+//     }
+//     return false;
+// }

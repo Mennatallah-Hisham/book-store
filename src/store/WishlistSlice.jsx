@@ -46,13 +46,6 @@ const wishlistSlice = createSlice({
 
 
 
-        },
-        isAdded(state,action){
-            const itemId = action.payload;
-         
-            return ItemExistsInLocaleStorage("wishlist",action.payload);
-        
-            
         }
         ,
         setWishlist(state){

@@ -8,6 +8,7 @@ import Books from '../components/book/Books';
 
 import { getBooks } from '../utility/FetchApi';
 
+
 const Home = () => {
   const [books,setBooks]=useState([]);
   
@@ -27,7 +28,8 @@ getBooks("https://api.itbook.store/1.0/new").then((data)=>setBooks(data.books));
   return (
     <React.Fragment>
     <Header title="find your next book"/>
-    {/* <Categories/> */}
+
+
 <Books books={books}/>
     <section>
 

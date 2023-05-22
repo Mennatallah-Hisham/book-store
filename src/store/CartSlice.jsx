@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ItemExistsInLocaleStorage ,storeInLocaleStorage ,getItemFromLocalStorage, getKeyValueFromLocalStorage} from "../utility/localStorage";
+import { ItemExistsInLocaleStorage ,storeInLocaleStorage , getKeyValueFromLocalStorage} from "../utility/localStorage";
 
 const storeState =(items , quantity,totalPrice)=>{
     storeInLocaleStorage("cart",items);
@@ -86,14 +86,6 @@ const cartSlice = createSlice({
             
           storeState(state.items,state.totalQuantity,state.totalPrice);
               
-
-        },
-
-        isAdded(state,action){
-           
-            const itemId = action.payload;
-          return ItemExistsInLocaleStorage("cart",itemId);
-
 
         }
         ,
