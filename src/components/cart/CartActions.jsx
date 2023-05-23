@@ -31,7 +31,7 @@ const CartActions = ({book}) => {
         price:book.price,
         image:book.image,
         title:book.title,
-        image:book.image
+ 
     }));
 
 
@@ -39,25 +39,29 @@ const CartActions = ({book}) => {
   }
 
   return (
-    <div className='flex'>
+    <div  className='flex-col--xs'>
       <p className='txt--sec'> {book.quantity}</p>
 
 <div className='btns'>
 <button className='btn btn--sm btn--sec'
 onClick={removeItem}
 >-</button>
+
+
 <button className='btn btn--sm btn--sec'
 onClick={
   addItem
 }>+</button>
 </div>
 
-<div className="btns ">
 <button className='btn btn--sm btn--filled ' onClick={deleteItem}> remove</button>
+
         <button className='btn btn--sm btn--outline ' onClick={moveToCart}> move to wishlist</button>
-</div>
+
       
-    </div>
+
+      </div>
+ 
   )
 }
 

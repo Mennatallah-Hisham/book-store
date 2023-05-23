@@ -7,6 +7,10 @@ const storeState =(items , quantity,totalPrice)=>{
     storeInLocaleStorage("cartQuantity",quantity);
     storeInLocaleStorage("totalPrice", totalPrice);
 }
+const convertToInt =(num)=>{
+    const int= Math.round(parseFloat(num.replace(/[^\d\.]*/g, '')));
+    return int;
+}
 
 const notify =(msg)=>{
     toast(msg,{
@@ -46,7 +50,7 @@ const cartSlice = createSlice({
                     id:item.id,
                     price:item.price,
                     quantity:1,
-                    totalPrice:Math.round(parseFloat(item.price.replace(/[^\d\.]*/g, ''))),
+                    totalPrice:convertToInt(item.price),
                     title:item.title,
                     image:item.image
 
@@ -57,7 +61,9 @@ const cartSlice = createSlice({
 
             }else{
                 existingItem.quantity++;
-                existingItem.totalPrice=Math.round(parseFloat(existingItem.price.replace(/[^\d\.]*/g, ''))+existingItem.totalPrice);
+                existingItem.totalPrice=convertToInt(existingItem.price
+                    +existingItem.totalPrice) ;
+               
            
 
 
@@ -79,10 +85,10 @@ const cartSlice = createSlice({
             }
             else{
                 existingItem.quantity--;
-                existingItem.totalPrice=existingItem.totalPrice-parseFloat(existingItem.price.replace(/[^\d\.]*/g, ''));
+                existingItem.totalPrice=existingItem.totalPrice-convertToInt(existingItem.price);
             }
             state.totalQuantity--;
-            state.totalPrice-=Math.round(parseFloat(existingItem.price.replace(/[^\d\.]*/g, '')));
+            state.totalPrice-=convertToInt(existingItem.price);
             
             storeState(state.items,state.totalQuantity,state.totalPrice);
                 

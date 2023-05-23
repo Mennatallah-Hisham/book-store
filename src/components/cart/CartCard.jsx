@@ -4,7 +4,7 @@ import CartActions from './CartActions'
 const CartCard = ({book}) => {
 
   return (
- <article className='flex'>
+ <article className='flex-col'>
 
 
 <img src={book.image} width="200px"/>

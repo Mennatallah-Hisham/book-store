@@ -31,12 +31,13 @@ const CartDetails = ({books}) => {
 <p className='txt--sec'> Total Price : {`${totalPrice}$`}</p>
 
 <div className='m-1'>
-<Link to="/checkout" className="btn btn--filled m-5">
-        Checkout
-    </Link>
+
     <button className="btn btn--outline" onClick={resetCart}>
       Empty Cart
     </button>
+    <Link to="/checkout" className="btn btn--filled m-5">
+        Checkout
+    </Link>
 
 </div>
 
