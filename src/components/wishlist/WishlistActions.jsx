@@ -21,14 +21,16 @@ const WishlistActions = ({book}) => {
     }));
   }
   return (
-    <div className='btns'>
-
-    <button className='btn btn--sm btn--outline' onClick={removeItem}>
-    remove from wishlist
-  </button>
-    <button className='btn btn--sm btn--filled' onClick={moveToCart}>
+    <div className='flex-col--sm'>
+          <button className='btn btn--sm btn--filled' onClick={moveToCart}>
         move to cart
     </button>
+
+    <button className='btn btn--sm btn--outline mt-1' onClick={removeItem}>
+    remove from wishlist
+  </button>
+
+
 </div>
   )
 }
