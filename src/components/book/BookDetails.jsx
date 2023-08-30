@@ -2,7 +2,16 @@ import React from 'react'
 
 import AddToCart from '../buttons/AddToCart';
 import AddToWishlist from '../buttons/AddToWishlist';
+import RemoveFromWishlist from '../buttons/RemoveFromWishlist';
+import { useState } from 'react';
 const BookDetails = ({book}) => {
+const [isAddedToWishlist,setIsAddedToWishlist]=useState(false);
+const ToggleIsAdded=()=>{
+setIsAddedToWishlist(prev=>!prev);
+
+}
+
+
 
 
 
@@ -38,7 +47,9 @@ const BookDetails = ({book}) => {
 
 <div className='flex-1'>
 <AddToCart book={book}/>
-<AddToWishlist book={book}/>
+{isAddedToWishlist ?   <RemoveFromWishlist id={book.isbn10} toggle={ToggleIsAdded}/> : <AddToWishlist book={book
+} toggle={ToggleIsAdded}/>}
+
    
 </div>
   

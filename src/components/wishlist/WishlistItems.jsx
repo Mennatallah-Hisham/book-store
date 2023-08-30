@@ -1,7 +1,7 @@
 import React from 'react'
 
 import WishlistActions from './WishlistActions';
-import BookInfo from '../book/BookInfo';
+import BookCard from '../book/BookCard';
 
 const WishlistItems = ({books}) => {
  
@@ -14,7 +14,11 @@ books.map((book)=>(
 <article  className='card'
  key={book.id}>
 
-<BookInfo book={book} />
+
+<BookCard
+ key={book.id}
+id={book.id}
+ title={book.title} price={book.price} image={book.image} subtitle={book.subtitle} quantity={book.quantity}/>
 <WishlistActions book={book}/>
 </article>)
 )

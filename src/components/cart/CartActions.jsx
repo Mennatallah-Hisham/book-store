@@ -45,7 +45,7 @@ const CartActions = ({book}) => {
 <div className='btns'>
 <button className='btn btn--sm btn--sec'
 onClick={removeItem}
->-</button>
+ >-</button>
 
 
 <button className='btn btn--sm btn--sec'

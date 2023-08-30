@@ -1,9 +1,10 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import {wishlistActions} from '../../store/WishlistSlice';
-const RemoveFromWishlist = ({id}) => {
+const RemoveFromWishlist = ({id, toggle}) => {
     const dispatch =useDispatch();
     const removeItem =()=>{
+      toggle();
         dispatch(wishlistActions.removeItem(id));
 
     }
