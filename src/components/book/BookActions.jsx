@@ -5,12 +5,14 @@ import AddToWishlist from "../buttons/AddToWishlist";
 
 
 const BookActions = ({book}) => {
+  console.log(book,"book action")
 
-
+//  <div "className='btns'">
   return (
-    <div className='btns'>
+  <div>
      
         <AddToWishlist book={book}/>
+        <br/>
         <AddToCart book={book}/>
      
     </div>

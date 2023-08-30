@@ -11,7 +11,7 @@ const Books = ({books}) => {
 
 {books.map((book)=><BookCard
 id={book.isbn13}
- title={book.title} price={book.price} image={book.image} subtitle={book.subtitle}/>)}
+ title={book.title} price={book.price} image={book.image} subtitle={book.subtitle} quantity={book.quantity}/>)}
      
       </section>
 

@@ -16,10 +16,17 @@ const Home = () => {
 
   useEffect(()=>{
    
-getBooks("https://api.itbook.store/1.0/new").then((data)=>setBooks(data.books));
+getBooks("https://api.itbook.store/1.0/new").then((data)=>setBooks(
+
+  data.books.map(
+    book=>({...book , quantity
+      :0})
+    )
+  
+  ));
   },[]);
 
-  
+
 
  
 
