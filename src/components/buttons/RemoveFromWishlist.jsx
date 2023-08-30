@@ -9,7 +9,7 @@ const RemoveFromWishlist = ({id, toggle}) => {
 
     }
   return (
-    <button className='btn btn--sm btn--outline' onClick={removeItem}>
+    <button className='btn btn--m btn--outline' onClick={removeItem}>
     remove from wishlist
   </button>
   )

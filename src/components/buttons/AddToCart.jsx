@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 const AddToCart = ({book}) => {
 
-  const [quantity, setQuantity]=useState(0);
+  // const [quantity, setQuantity]=useState(0);
 
    
       const dispatch =useDispatch();
@@ -29,8 +29,8 @@ const AddToCart = ({book}) => {
   return (
     <>
  <div className='btns'>
-  <p>{quantity}</p>
- <button className='btn btn--sm btn--filled' onClick={addToCart}>
+  {/* <p>{quantity}</p> */}
+ <button className='btn btn--m btn--filled' onClick={addToCart}>
             Add to cart
         </button>
 

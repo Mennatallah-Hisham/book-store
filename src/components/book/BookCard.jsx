@@ -8,17 +8,25 @@ const BookCard = (book) => {
   <article className='card'>
 
      <Link className="clr-pri txt--m" to={`/${book.id}/book`}>
-      <img className="card__img" src={book.image} alt={book.subtitle}/>
+      <div>
+          <img className="card__img" src={book.image} alt={book.subtitle}/>
+
+      </div>
+    
       
     <div className='card__content'>
- 
+  
 
-  {book.title}
+<p>
+{book.title}
+</p>
+<p className='card__price'>{book.price}</p>
+
 
 
 
     
-   <p className='clr-sec card__price'>{book.price}</p>
+
   
    
    

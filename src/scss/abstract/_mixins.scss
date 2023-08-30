@@ -19,6 +19,7 @@
 @mixin flex-row{
   display:  flex;
   justify-content: center;
+  align-items: flex-start;
     flex-wrap: wrap;
 }
 
@@ -29,7 +30,7 @@
 }
 
 @mixin screen-md{
-    @media (min-width:"48em"){
+    @media (min-width:"22em"){
         @content;
     }
 }

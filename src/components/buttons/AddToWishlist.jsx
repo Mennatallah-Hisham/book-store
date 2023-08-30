@@ -19,7 +19,7 @@ const AddToWishlist = ({book, toggle}) => {
   }
   return (
     
-    <button className='btn btn--sm btn--outline' onClick={addToWishlist}>
+    <button className='btn btn--m btn--outline' onClick={addToWishlist}>
             Add to wishlist
         </button>
 

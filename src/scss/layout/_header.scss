@@ -2,18 +2,18 @@
 
 .header{
     background-color:$clr-primary;
-    padding:8rem 1rem;
+    padding:6rem 1rem;
     text-align: center;
 
     &__title{
         color:$clr-neutral;
         text-transform: capitalize;
-        font-size: 5rem;
+        font-size: 4rem;
 
         &::after{
             content:" ";
             width:32rem;
-            height:0.5rem;
+            height:0.4rem;
             background-color: $clr-secondary;
             display: block;
             margin-inline: auto;

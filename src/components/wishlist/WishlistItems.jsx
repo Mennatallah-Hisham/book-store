@@ -18,7 +18,7 @@ books.map((book)=>(
 <BookCard
  key={book.id}
 id={book.id}
- title={book.title} price={book.price} image={book.image} subtitle={book.subtitle} quantity={book.quantity}/>
+ title={book.title} image={book.image} subtitle={book.subtitle} />
 <WishlistActions book={book}/>
 </article>)
 )

@@ -49,7 +49,14 @@
 .flex-1{
     @include flex-row;
     gap:2rem;
+ 
 }
+.flex-0{
+    @include flex-row;
+    gap:0.5rem;
+    align-items: center;
+}
+
 
 
 .txt--center{
