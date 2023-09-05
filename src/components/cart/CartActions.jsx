@@ -22,7 +22,7 @@ const CartActions = ({book}) => {
       }));
 
   }
-  const moveToCart =()=>{
+  const moveToWishlist =()=>{
     deleteItem();
     
     dispatch(wishlistActions.addItem({
@@ -56,7 +56,7 @@ onClick={
 
 <button className='btn btn--sm btn--filled ' onClick={deleteItem}> remove</button>
 
-        <button className='btn btn--sm btn--outline ' onClick={moveToCart}> move to wishlist</button>
+        <button className='btn btn--sm btn--outline ' onClick={moveToWishlist}> move to wishlist</button>
 
       
 
