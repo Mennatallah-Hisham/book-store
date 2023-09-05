@@ -12,3 +12,6 @@ React-toastify
 2. view book details
 2. add to cart / remove from cart
 3. add to wishlist / remove from wishlist
+
+## live demo
+link: https://book-store-amber-three.vercel.app/
